@@ -1,28 +1,111 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
     defaultConfig {
         applicationId "com.fangyi.sundae"
-        minSdkVersion 23
-        targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode getCode()
+        versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    signingConfigs {
+        signConfig
+        File propFile = file('signing.properties')
+        if (propFile.exists()) {
+            Properties props = new Properties()
+            props.load(new FileInputStream(propFile))
+            if (props.containsKey('signingFile') && props.containsKey('storePass') &&
+                    props.containsKey('alias') && props.containsKey('keyPass') && props.containsKey("v2SigningEnabled")) {
+                signConfig.storeFile = file(props['signingFile'])
+                signConfig.storePassword = props['storePass']
+                signConfig.keyAlias = props['alias']
+                signConfig.keyPassword = props['keyPass']
+                android.signingConfigs.signConfig.v2SigningEnabled = props['v2SigningEnabled']
+            } else {
+                android.buildTypes.release.signingConfig = null
+                android.buildTypes.flavor.signingConfig = null
+            }
+        } else {
+            android.buildTypes.release.signingConfig = null
+            android.buildTypes.flavor.signingConfig = null
+        }
+
+        print("signingConfigs===========${signConfig}")
+    }
+
     buildTypes {
+
         release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+            buildConfigField "boolean", "isRelease", "true"
+            zipAlignEnabled true
+            shrinkResources true
+            manifestPlaceholders = [
+                    APP_NAME: "release"
+            ]
+        }
+
+        debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.signConfig
+            buildConfigField "boolean", "isRelease", "false"
+//            applicationIdSuffix 'debug'
+            zipAlignEnabled false
+            shrinkResources false
+            manifestPlaceholders = [
+                    APP_NAME: "debug"
+            ]
+
+        }
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all { output ->
+            def newApkName
+            newApkName = getTime() + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
+            outputFileName = newApkName
         }
     }
 }
 
+def getTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+def getCode() {
+    String name = rootProject.ext.android.versionName
+    List arr = name.tokenize('.')
+    int code1
+    int code2
+    int code3
+    code1 = arr.get(0).toInteger() * 10000
+    code2 = arr.get(1).toInteger() * 100
+    code3 = arr.get(2).toInteger()
+    int code = code1 + code2 + code3
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:27.0.2'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    if (IsBuildApp.toBoolean()) {
+        implementation project(':component_library')
+    } else {
+        implementation project(':module_android')
+    }
 }

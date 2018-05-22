@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">component_library</string>
+
+    <string name="http_exception_network">网络不可用，请检查网络</string>
+    <string name="http_exception_url">Url格式错误啦</string>
+    <string name="http_exception_host">没有找到Url指定的服务器</string>
+    <string name="http_exception_connect_timeout">连接服务器超时</string>
+    <string name="http_exception_write">发送数据失败</string>
+    <string name="http_exception_read_timeout">读取数据超时</string>
+    <string name="http_exception_parse_error">解析数据异常</string>
+    <string name="http_exception_unknow_error">发生未知异常</string>
+    <string name="http_exception_download_error">服务器异常</string>
+
+    <string name="http_server_data_format_error">服务器数据格式错误</string>
+    <string name="http_server_error">服务器开小差啦</string>
+    <string name="http_unknow_error">发生未知异常</string>
+</resources>
