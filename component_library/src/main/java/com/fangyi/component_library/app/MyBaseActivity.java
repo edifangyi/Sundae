@@ -1,4 +1,4 @@
-package com.fangyi.sundae.base;
+package com.fangyi.component_library.app;
 
 import android.widget.Toast;
 

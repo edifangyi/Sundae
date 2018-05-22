@@ -57,7 +57,7 @@ android {
             zipAlignEnabled true
             shrinkResources true
             manifestPlaceholders = [
-                    APP_NAME: "release"
+                    APP_NAME: "Sundae release"
             ]
         }
 
@@ -70,9 +70,8 @@ android {
             zipAlignEnabled false
             shrinkResources false
             manifestPlaceholders = [
-                    APP_NAME: "debug"
+                    APP_NAME: "Sundae debug"
             ]
-
         }
     }
 
@@ -107,5 +106,7 @@ dependencies {
         implementation project(':component_library')
     } else {
         implementation project(':module_android')
+        implementation project(':module_vue')
+
     }
 }
