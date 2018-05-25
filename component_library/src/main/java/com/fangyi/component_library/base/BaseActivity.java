@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * ================================================
@@ -21,7 +19,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public Context mContext;
     public Handler mHandler;
-    private Unbinder mUnbinder;
 
 
     @Override
@@ -29,7 +26,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(getLayoutId());
-        mUnbinder = ButterKnife.bind(this);
 
         mContext = this;
         mHandler = new Handler();
@@ -46,9 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         mContext = null;
         mHandler = null;
-        if (mUnbinder != null && mUnbinder != Unbinder.EMPTY)
-            mUnbinder.unbind();
-        mUnbinder = null;
     }
 
 

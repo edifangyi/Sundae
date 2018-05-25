@@ -5,6 +5,7 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.blankj.utilcode.util.Utils;
 import com.fangyi.component_library.BuildConfig;
 import com.fangyi.component_library.config.AppConfig;
 import com.fangyi.component_library.http.JsonConverter;
@@ -46,6 +47,8 @@ public abstract class BaseApplication extends Application {
         }
         ARouter.init(this);
 
+        Utils.init(this);
+
         Kalle.setConfig(KalleConfig.newBuilder()
                 .connectFactory(URLConnectionFactory.newBuilder().build())
                 .cookieStore(DBCookieStore.newBuilder(this).build())
@@ -54,6 +57,8 @@ public abstract class BaseApplication extends Application {
                 .addInterceptor(new LoggerInterceptor("KalleSample", BuildConfig.DEBUG))
                 .converter(new JsonConverter(this))
                 .build());
+
+
     }
 
     protected void attachBaseContext(Context base) {

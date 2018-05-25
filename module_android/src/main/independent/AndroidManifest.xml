@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fangyi.module_android">
 
-    <application
-        android:theme="@style/AppTheme">
+    <application android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".AndroidActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -11,6 +10,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".demo_md.ToolBarActivity" />
     </application>
 
 </manifest>

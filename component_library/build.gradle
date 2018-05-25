@@ -11,12 +11,6 @@ android {
 
         multiDexEnabled true
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-            }
-        }
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -62,10 +56,8 @@ dependencies {
     api rootProject.ext.dependencies.arouter
     annotationProcessor rootProject.ext.dependencies.arouterCompile
 
-    api rootProject.ext.dependencies.butterknife
-    api rootProject.ext.dependencies.butterknifeCompile
-
     api rootProject.ext.dependencies.klog
+    api rootProject.ext.dependencies.utilcode
 
     api rootProject.ext.dependencies.kalle
     api rootProject.ext.dependencies.gson
@@ -73,6 +65,13 @@ dependencies {
 
     api rootProject.ext.dependencies.baseAdapter
     api rootProject.ext.dependencies.materialDialogs
+
+    api rootProject.ext.dependencies.navigationView
+
+    api rootProject.ext.dependencies.glide
+    annotationProcessor rootProject.ext.dependencies.glideCompile
+
+    api rootProject.ext.dependencies.lottie
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

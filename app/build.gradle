@@ -9,12 +9,6 @@ android {
         versionCode getCode()
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        javaCompileOptions {
-            annotationProcessorOptions {
-                includeCompileClasspath true
-            }
-        }
     }
 
     compileOptions {
@@ -107,6 +101,7 @@ dependencies {
     } else {
         implementation project(':module_android')
         implementation project(':module_vue')
+        implementation project(':module_about')
 
     }
 }

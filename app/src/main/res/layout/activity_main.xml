@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.view.ViewPager
+    <com.fangyi.component_library.widget.NoScrollViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navPage" />
+        android:layout_above="@+id/navPage"
+        android:overScrollMode="never" />
 
     <me.majiajie.pagerbottomtabstrip.PageNavigationView
         android:id="@+id/navPage"
@@ -15,6 +16,6 @@
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
         android:background="#FFF"
-        android:elevation="3dp" />
+        android:elevation="10dp" />
 
 </RelativeLayout>

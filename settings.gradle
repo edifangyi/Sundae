@@ -1,1 +1,1 @@
-include ':app', ':module_android', ':component_library'
+include ':app', ':module_android', ':component_library', ':module_vue', ':module_about'

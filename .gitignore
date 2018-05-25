@@ -65,3 +65,11 @@ fastlane/test_output
 fastlane/readme.md
 
 app/libs/
+app/src/main/java/com/fangyi/sundae/base/
+app/src/main/java/com/fangyi/sundae/business/
+component_library/libs/
+module_about/libs/
+module_android/libs/
+module_android/src/main/java/com/fangyi/module_android/demo_glide/
+module_android/src/main/java/com/fangyi/module_android/demo_kotlin/
+module_vue/libs/

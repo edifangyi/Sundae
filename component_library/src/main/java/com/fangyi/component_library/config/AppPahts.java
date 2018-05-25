@@ -10,6 +10,12 @@ package com.fangyi.component_library.config;
  */
 public class AppPahts {
     public static final String ANDROID_PAHT = "/android/fragment";
+    public static final String VUE_PAHT = "/vue/fragment";
+    public static final String ABOUT_PAHT = "/about/fragment";
 
+    public static final String VUE_ACTIVITY_PAHT = "/vue/activity";
+
+
+    public static final String WX_LOGIN = "/wx/login";
 
 }

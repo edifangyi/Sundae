@@ -1,17 +1,20 @@
 package com.fangyi.sundae.system.ui;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.fangyi.component_library.app.MyBaseActivity;
 import com.fangyi.component_library.base.BasePagerAdapter;
 import com.fangyi.component_library.config.AppPahts;
-import com.fangyi.module_android.AndroidFragment;
-import com.fangyi.module_vue.ui.fragment.VueFragment;
+import com.fangyi.component_library.widget.NoScrollViewPager;
+import com.fangyi.module_about.ui.AboutFragment;
+import com.fangyi.module_android.ui.AndroidFragment;
+import com.fangyi.module_vue.ui.VueFragment;
 import com.fangyi.sundae.R;
 import com.fangyi.sundae.system.mvp.contract.MainContract;
 import com.fangyi.sundae.system.mvp.model.MainModel;
@@ -19,7 +22,6 @@ import com.fangyi.sundae.system.mvp.presenter.MainPresenter;
 
 import java.util.ArrayList;
 
-import butterknife.BindView;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 import me.majiajie.pagerbottomtabstrip.item.BaseTabItem;
@@ -33,10 +35,14 @@ import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
 public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> implements MainContract.View {
 
 
-    @BindView(R.id.viewPager)
-    ViewPager mViewPager;
-    @BindView(R.id.navPage)
-    PageNavigationView mNavPage;
+    private NoScrollViewPager mViewPager;
+    private PageNavigationView mNavPage;
+
+    public static void startAction(Activity activity, boolean isFinish) {
+        Intent intent = new Intent(activity, MainActivity.class);
+        activity.startActivity(intent);
+        if (isFinish) activity.finish();
+    }
 
     @Override
     public int getLayoutId() {
@@ -45,38 +51,40 @@ public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> imple
 
     @Override
     protected void init(Bundle savedInstanceState) {
+        initView();
 
+
+        ArrayList<String> titles = new ArrayList<>();
+        titles.add("Android");
+        titles.add("Vue");
+        titles.add("GitHub");
+        titles.add("About");
+
+        AndroidFragment androidFragment = (AndroidFragment) ARouter.getInstance().build(AppPahts.ANDROID_PAHT).withString("title", titles.get(0)).navigation();
+        VueFragment vueFragment = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
+        VueFragment a = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
+        AboutFragment aboutFragment = (AboutFragment) ARouter.getInstance().build(AppPahts.ABOUT_PAHT).withString("title", titles.get(3)).navigation();
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        ArrayList<String> titles = new ArrayList<>();
-
-
-        AndroidFragment androidFragment = (AndroidFragment) ARouter.getInstance().build(AppPahts.ANDROID_PAHT).navigation();
-        AndroidFragment a = (AndroidFragment) ARouter.getInstance().build(AppPahts.ANDROID_PAHT).navigation();
-        VueFragment vueFragment = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).navigation();
-        VueFragment b = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).navigation();
-
+        fragments.add(aboutFragment);
         fragments.add(androidFragment);
-        titles.add("Android");
-        fragments.add(a);
-        titles.add("Vue");
-        fragments.add(b);
-        titles.add("GitHub");
         fragments.add(vueFragment);
-        titles.add("Utils");
+        fragments.add(a);
+
 
 
         BasePagerAdapter adapter = new BasePagerAdapter(getSupportFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
 
         NavigationController navigationController = mNavPage.custom()
-                .addItem(newItem(0, R.drawable.main_ic_android_uncheck, R.drawable.main_ic_android_check, "Android"))
-                .addItem(newItem(1, R.drawable.main_ic_vue_uncheck, R.drawable.main_ic_vue_check, "Vue"))
-                .addItem(newItem(2, R.drawable.main_ic_github_uncheck, R.drawable.main_ic_github_check, "GitHub"))
-                .addItem(newItem(3, R.drawable.main_ic_utils_uncheck, R.drawable.main_ic_utils_check, "QQ"))
+                .addItem(newItem(0, R.drawable.main_ic_android_uncheck, R.drawable.main_ic_android_check, titles.get(0)))
+                .addItem(newItem(1, R.drawable.main_ic_vue_uncheck, R.drawable.main_ic_vue_check, titles.get(1)))
+                .addItem(newItem(2, R.drawable.main_ic_github_uncheck, R.drawable.main_ic_github_check, titles.get(2)))
+                .addItem(newItem(3, R.drawable.main_ic_about_uncheck, R.drawable.main_ic_about_check, titles.get(3)))
                 .build();
 
         navigationController.setupWithViewPager(mViewPager);
+
 
     }
 
@@ -90,5 +98,10 @@ public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> imple
             normalItemView.setTextCheckedColor(Color.GRAY);
         }
         return normalItemView;
+    }
+
+    private void initView() {
+        mViewPager = findViewById(R.id.viewPager);
+        mNavPage = findViewById(R.id.navPage);
     }
 }

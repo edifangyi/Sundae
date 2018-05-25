@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fangyi.sundae">
 
+
     <application
         android:name=".app.MyApplication"
         android:allowBackup="true"
@@ -12,13 +13,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:label">
-        <activity android:name=".system.ui.MainActivity">
+
+        <activity android:name=".system.ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".system.ui.MainActivity" />
     </application>
 
 </manifest>

@@ -9,9 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * ================================================
  * 作    者：FANGYI <87649669@qq.com>
@@ -28,7 +25,6 @@ public abstract class BaseFragment extends Fragment {
     protected BaseActivity mActivity;
     public Context mContext;
     public Handler mHandler;
-    private Unbinder mUnbinder;
 
     @Nullable
     @Override
@@ -39,7 +35,6 @@ public abstract class BaseFragment extends Fragment {
         mActivity = (BaseActivity) getActivity();
         mContext = getActivity();
         mHandler = new Handler();
-        mUnbinder = ButterKnife.bind(this, rootView);
 
         init(savedInstanceState);
 
@@ -49,12 +44,4 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int getLayoutId();
 
     protected abstract void init(Bundle savedInstanceState);
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        if (mUnbinder != Unbinder.EMPTY) mUnbinder.unbind();
-        mUnbinder = null;
-    }
 }

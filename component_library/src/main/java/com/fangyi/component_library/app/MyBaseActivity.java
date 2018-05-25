@@ -3,6 +3,7 @@ package com.fangyi.component_library.app;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.blankj.utilcode.util.ScreenUtils;
 import com.fangyi.component_library.base.BaseModel;
 import com.fangyi.component_library.base.BasePresenter;
 import com.fangyi.component_library.base.MvpBaseActivity;
@@ -33,6 +34,8 @@ public abstract class MyBaseActivity <P extends BasePresenter, M extends BaseMod
                 .progressIndeterminateStyle(false)
                 .cancelable(false)
                 .show();
+
+
     }
 
     @Override

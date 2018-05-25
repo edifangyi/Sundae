@@ -2,8 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.fangyi.module_android">
 
-    <application android:theme="@style/AppTheme">
+    <application android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".AndroidActivity" />
+        <activity android:name=".demo_md.ToolBarActivity" />
     </application>
 
 </manifest>
