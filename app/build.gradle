@@ -101,7 +101,7 @@ dependencies {
     } else {
         implementation project(':module_android')
         implementation project(':module_vue')
-        implementation project(':module_about')
+        implementation project(':module_me')
 
     }
 }

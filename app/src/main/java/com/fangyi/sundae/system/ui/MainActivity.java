@@ -12,8 +12,8 @@ import com.fangyi.component_library.app.MyBaseActivity;
 import com.fangyi.component_library.base.BasePagerAdapter;
 import com.fangyi.component_library.config.AppPahts;
 import com.fangyi.component_library.widget.NoScrollViewPager;
-import com.fangyi.module_about.ui.AboutFragment;
 import com.fangyi.module_android.ui.AndroidFragment;
+import com.fangyi.module_me.ui.MeFragment;
 import com.fangyi.module_vue.ui.VueFragment;
 import com.fangyi.sundae.R;
 import com.fangyi.sundae.system.mvp.contract.MainContract;
@@ -58,19 +58,18 @@ public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> imple
         titles.add("Android");
         titles.add("Vue");
         titles.add("GitHub");
-        titles.add("About");
+        titles.add("Me");
 
         AndroidFragment androidFragment = (AndroidFragment) ARouter.getInstance().build(AppPahts.ANDROID_PAHT).withString("title", titles.get(0)).navigation();
         VueFragment vueFragment = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
         VueFragment a = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
-        AboutFragment aboutFragment = (AboutFragment) ARouter.getInstance().build(AppPahts.ABOUT_PAHT).withString("title", titles.get(3)).navigation();
+        MeFragment meFragment = (MeFragment) ARouter.getInstance().build(AppPahts.ME_PAHT).withString("title", titles.get(3)).navigation();
 
         ArrayList<Fragment> fragments = new ArrayList<>();
-        fragments.add(aboutFragment);
         fragments.add(androidFragment);
-        fragments.add(vueFragment);
         fragments.add(a);
-
+        fragments.add(vueFragment);
+        fragments.add(meFragment);
 
 
         BasePagerAdapter adapter = new BasePagerAdapter(getSupportFragmentManager(), fragments, titles);

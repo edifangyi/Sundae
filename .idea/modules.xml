@@ -5,8 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/Sundae.iml" filepath="$PROJECT_DIR$/Sundae.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/component_library/component_library.iml" filepath="$PROJECT_DIR$/component_library/component_library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/module_about/module_about.iml" filepath="$PROJECT_DIR$/module_about/module_about.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_android/module_android.iml" filepath="$PROJECT_DIR$/module_android/module_android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/module_me/module_me.iml" filepath="$PROJECT_DIR$/module_me/module_me.iml" />
       <module fileurl="file://$PROJECT_DIR$/module_vue/module_vue.iml" filepath="$PROJECT_DIR$/module_vue/module_vue.iml" />
     </modules>
   </component>

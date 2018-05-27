@@ -17,11 +17,10 @@
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:contentScrim="@color/gray_shallow"
-            app:expandedTitleGravity="bottom"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title=""
-            app:toolbarId="@id/toolbar">
+            app:contentScrim="@color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:titleEnabled="false">
+
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -29,7 +28,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="300dp"
+                    android:layout_height="400dp"
                     android:orientation="vertical"
                     app:layout_collapseMode="parallax">
 
@@ -39,17 +38,37 @@
                         android:layout_weight="1"
                         android:background="@mipmap/wallpaper" />
 
-                    <View
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1" />
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="巴拉巴拉小别墅"
+                            android:textColor="@color/black"
+                            android:textSize="21sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="真的是吃啥啥不剩(๑¯◡¯๑)"
+                            android:textColor="@color/black"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
-                <com.fangyi.module_about.widget.MultiShapeView
+                <com.fangyi.module_me.widget.MultiShapeView
                     android:id="@+id/iv_circle"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
                     app:border_color="@color/white"
                     app:border_width="2dp"
@@ -57,18 +76,29 @@
 
             </FrameLayout>
 
-
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/transparent"
+                android:minHeight="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
-                app:title="巴拉巴拉小别墅"
-                app:titleTextColor="@color/colorPrimary" />
+                app:title="Me"
+                app:titleTextColor="@color/black" />
+
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/white"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
+            app:tabTextColor="@color/gray" />
 
     </android.support.design.widget.AppBarLayout>
 
@@ -83,46 +113,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:gravity="center"
-                android:text="底部还有内容啊！！！" />
 
-            <TextView
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#009988"
-                android:gravity="center"
-                android:text="标签1" />
+                android:layout_height="1dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/gray_shallow" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#002288"
-                android:gravity="center"
-                android:text="标签2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#009922"
-                android:gravity="center"
-                android:text="标签3" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#00aa88"
-                android:gravity="center"
-                android:text="标签4" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="#999988"
-                android:gravity="center"
-                android:text="标签5" />
         </LinearLayout>
 
 

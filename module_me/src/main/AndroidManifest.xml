@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fangyi.module_about">
+    package="com.fangyi.module_me">
 
     <application android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".AboutActivity" />
+        <activity android:name=".MeActivity" />
     </application>
 
 </manifest>

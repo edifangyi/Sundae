@@ -48,7 +48,7 @@ public class AndroidFragment extends BaseFragment {
         titles.add("Glide");
         titles.add("MaterialDesign");
         titles.add("Kotlin");
-        titles.add("Rxjava");
+        titles.add("RxJava");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(LottieFragment.newInstance());
         fragments.add(GlideFragment.newInstance());
