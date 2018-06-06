@@ -18,7 +18,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio%203.1.2/plugins/android/lib/android.jar!/images/material_design_icons/communication/ic_business_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio%203.1.2/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -28,8 +28,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_business_black_24dp" />
-                            <entry key="sourceFile" value="D:\SVG\parfait.svg" />
+                            <entry key="outputName" value="ic_arrow_back_black_24dp" />
+                            <entry key="sourceFile" value="C:\Users\FANGYI" />
                           </map>
                         </option>
                       </PersistentState>

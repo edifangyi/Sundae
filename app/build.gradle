@@ -11,6 +11,10 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
+    dataBinding {
+        enabled = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -44,12 +48,15 @@ android {
     buildTypes {
 
         release {
-            minifyEnabled true
+            //是否zip对齐
+            zipAlignEnabled false
+            // 缩减resource文件
+            shrinkResources false
+            //Proguard
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.signConfig
             buildConfigField "boolean", "isRelease", "true"
-            zipAlignEnabled true
-            shrinkResources true
             manifestPlaceholders = [
                     APP_NAME: "Sundae release"
             ]
@@ -69,10 +76,20 @@ android {
         }
     }
 
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             def newApkName
-            newApkName = getTime() + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
+
+            if (variant.buildType.debuggable) {
+                newApkName = "debug_" + getTime() + "_" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
+            } else {
+                newApkName = getTime() + "-" + defaultConfig.versionName + "-" + defaultConfig.versionCode + ".apk"
+            }
             outputFileName = newApkName
         }
     }
@@ -102,6 +119,5 @@ dependencies {
         implementation project(':module_android')
         implementation project(':module_vue')
         implementation project(':module_me')
-
     }
 }

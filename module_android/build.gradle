@@ -2,6 +2,7 @@ if (IsBuildApp.toBoolean()) {
     apply plugin: 'com.android.application'
 } else {
     apply plugin: 'com.android.library'
+    apply plugin: 'com.jakewharton.butterknife'
 }
 
 android {
@@ -17,9 +18,19 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
+                includeCompileClasspath true
+            }
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
                 arguments = [moduleName: project.getName()]
             }
         }
+    }
+
+    dataBinding {
+        enabled = true
     }
 
     compileOptions {
@@ -65,4 +76,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(':component_library')
     annotationProcessor rootProject.ext.dependencies.arouterCompile
+
+    implementation 'com.jakewharton:butterknife:8.5.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 }

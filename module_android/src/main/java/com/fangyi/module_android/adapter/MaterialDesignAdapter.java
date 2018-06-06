@@ -16,10 +16,10 @@ import java.util.List;
  * 说    明：
  * ================================================
  */
-public class DemoAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
+public class MaterialDesignAdapter extends BaseQuickAdapter<String, BaseViewHolder> {
 
-    public DemoAdapter(@Nullable List<String> data) {
-        super(R.layout.item_demo, data);
+    public MaterialDesignAdapter(@Nullable List<String> data) {
+        super(R.layout.item_material_design, data);
     }
 
     @Override

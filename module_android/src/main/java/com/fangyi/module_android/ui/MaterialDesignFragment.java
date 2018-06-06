@@ -8,7 +8,7 @@ import android.view.View;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fangyi.component_library.base.BaseFragment;
 import com.fangyi.module_android.R;
-import com.fangyi.module_android.adapter.DemoAdapter;
+import com.fangyi.module_android.adapter.MaterialDesignAdapter;
 import com.fangyi.module_android.demo_md.ToolBarActivity;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class MaterialDesignFragment extends BaseFragment {
 
 
     private android.support.v7.widget.RecyclerView mRecyclerView;
-    private DemoAdapter mAdapter;
+    private MaterialDesignAdapter mAdapter;
 
     public static MaterialDesignFragment newInstance() {
         MaterialDesignFragment fragment = new MaterialDesignFragment();
@@ -56,7 +56,7 @@ public class MaterialDesignFragment extends BaseFragment {
         list.add("TextInputEdittext");
         list.add("ConstraintLayout");
 
-        mAdapter = new DemoAdapter(list);
+        mAdapter = new MaterialDesignAdapter(list);
         mRecyclerView.setAdapter(mAdapter);
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
             @Override

@@ -27,6 +27,8 @@ ext {
             gson           : 'com.google.code.gson:gson:2.8.2',
             fastjson       : 'com.alibaba:fastjson:1.1.68.android',
 
+            rxbinding      : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
+
             baseAdapter    : 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.40',
             materialDialogs: 'com.afollestad.material-dialogs:core:0.9.6.0',
 

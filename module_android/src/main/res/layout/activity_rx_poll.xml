@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar_title" />
+
+
+    <Button
+        android:id="@+id/btn_poll_0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="轮询 方法一" />
+
+    <Button
+        android:id="@+id/btn_poll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="轮询 方法二" />
+    <Button
+        android:id="@+id/btn_poll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="条件轮询 方法三 " />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/white_board"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+</LinearLayout>

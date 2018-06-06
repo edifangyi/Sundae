@@ -63,10 +63,15 @@
 
                     </LinearLayout>
 
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv_message"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
                 </LinearLayout>
 
                 <com.fangyi.module_me.widget.MultiShapeView
-                    android:id="@+id/iv_circle"
+                    android:id="@+id/msv_head"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
                     android:layout_gravity="center"
@@ -75,6 +80,7 @@
                     app:shape="circle" />
 
             </FrameLayout>
+
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -89,6 +95,12 @@
 
 
         </android.support.design.widget.CollapsingToolbarLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"
+            app:layout_scrollFlags="scroll|snap|enterAlways" />
 
         <android.support.design.widget.TabLayout
             android:id="@+id/tabLayout"
@@ -108,18 +120,10 @@
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
-            android:id="@+id/ll_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="30dp"
-                android:background="@color/gray_shallow" />
 
         </LinearLayout>
 

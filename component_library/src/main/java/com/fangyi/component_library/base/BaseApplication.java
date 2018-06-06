@@ -9,6 +9,7 @@ import com.blankj.utilcode.util.Utils;
 import com.fangyi.component_library.BuildConfig;
 import com.fangyi.component_library.config.AppConfig;
 import com.fangyi.component_library.http.JsonConverter;
+import com.fangyi.component_library.utils.ScreenAdaptUtil;
 import com.yanzhenjie.kalle.Kalle;
 import com.yanzhenjie.kalle.KalleConfig;
 import com.yanzhenjie.kalle.connect.BroadcastNetwork;
@@ -57,6 +58,7 @@ public abstract class BaseApplication extends Application {
                 .addInterceptor(new LoggerInterceptor("KalleSample", BuildConfig.DEBUG))
                 .converter(new JsonConverter(this))
                 .build());
+
 
 
     }

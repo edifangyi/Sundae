@@ -1,4 +1,4 @@
-package com.fangyi.module_android.ui;
+package com.fangyi.module_android;
 
 
 import android.os.Bundle;
@@ -12,7 +12,13 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fangyi.component_library.base.BaseFragment;
 import com.fangyi.component_library.base.BasePagerAdapter;
 import com.fangyi.component_library.config.AppPahts;
-import com.fangyi.module_android.R;
+import com.fangyi.module_android.ui.ButterKnifeFragment;
+import com.fangyi.module_android.ui.DataBindingFragment;
+import com.fangyi.module_android.ui.GlideFragment;
+import com.fangyi.module_android.ui.KotlinFragment;
+import com.fangyi.module_android.ui.LottieFragment;
+import com.fangyi.module_android.ui.MaterialDesignFragment;
+import com.fangyi.module_android.ui.RxBindingFragment;
 
 import java.util.ArrayList;
 
@@ -38,6 +44,8 @@ public class AndroidFragment extends BaseFragment {
 
     @Override
     protected void init(Bundle savedInstanceState) {
+
+
         initView();
 
         initToolbar();
@@ -48,13 +56,18 @@ public class AndroidFragment extends BaseFragment {
         titles.add("Glide");
         titles.add("MaterialDesign");
         titles.add("Kotlin");
-        titles.add("RxJava");
+        titles.add("RxBinding");
+        titles.add("DataBinding");
+        titles.add("ButterKnife");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(LottieFragment.newInstance());
         fragments.add(GlideFragment.newInstance());
         fragments.add(MaterialDesignFragment.newInstance());
         fragments.add(KotlinFragment.newInstance());
-        fragments.add(RxJavaFragment.newInstance());
+        fragments.add(RxBindingFragment.newInstance());
+        fragments.add(DataBindingFragment.newInstance());
+        fragments.add(ButterKnifeFragment.newInstance());
+
         BasePagerAdapter adapter = new BasePagerAdapter(getChildFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewPager, true);

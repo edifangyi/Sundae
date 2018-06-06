@@ -17,10 +17,9 @@
 
         <ImageView
             android:id="@+id/icon"
-            android:background="@mipmap/error_404"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/error_404"
             android:scaleType="fitCenter" />
 
         <TextView

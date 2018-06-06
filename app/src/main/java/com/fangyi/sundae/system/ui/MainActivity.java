@@ -12,7 +12,7 @@ import com.fangyi.component_library.app.MyBaseActivity;
 import com.fangyi.component_library.base.BasePagerAdapter;
 import com.fangyi.component_library.config.AppPahts;
 import com.fangyi.component_library.widget.NoScrollViewPager;
-import com.fangyi.module_android.ui.AndroidFragment;
+import com.fangyi.module_android.AndroidFragment;
 import com.fangyi.module_me.ui.MeFragment;
 import com.fangyi.module_vue.ui.VueFragment;
 import com.fangyi.sundae.R;
@@ -51,8 +51,9 @@ public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> imple
 
     @Override
     protected void init(Bundle savedInstanceState) {
-        initView();
+//        ScreenAdaptUtil.setCustomDensity(this, BaseApplication.getInstance());
 
+        initView();
 
         ArrayList<String> titles = new ArrayList<>();
         titles.add("Android");

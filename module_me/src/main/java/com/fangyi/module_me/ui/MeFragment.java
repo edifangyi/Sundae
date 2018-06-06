@@ -2,6 +2,10 @@ package com.fangyi.module_me.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.TabLayout;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -23,7 +27,9 @@ import com.fangyi.module_me.widget.MultiShapeView;
 public class MeFragment extends BaseFragment {
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
-    private MultiShapeView mIvCircle;
+    private TabLayout mTabLayout;
+    private MultiShapeView mMsvHead;
+    private RecyclerView mRvMessage;
 
 
     @Override
@@ -34,6 +40,23 @@ public class MeFragment extends BaseFragment {
     @Override
     protected void init(Bundle savedInstanceState) {
         initView();
+
+        initToolbar();
+
+        mMsvHead.setImageResource(R.mipmap.image_head);
+
+        mRvMessage.setHasFixedSize(true);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
+        mRvMessage.setLayoutManager(linearLayoutManager);
+
+        mRvMessage.setNestedScrollingEnabled(true);
+
+
+//        mRvMessage.setAdapter(mAdapter);
+
+    }
+
+    private void initToolbar() {
 
         mAppBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
             //这个是计算App bar Layout的总高度的API
@@ -49,15 +72,17 @@ public class MeFragment extends BaseFragment {
             } else {
                 mToolbar.setAlpha(0);
             }
-
         });
-
-        mIvCircle.setImageResource(R.mipmap.image_head);
     }
 
     private void initView() {
         mAppBarLayout = rootView.findViewById(R.id.appBarLayout);
         mToolbar = rootView.findViewById(R.id.toolbar);
-        mIvCircle = rootView.findViewById(R.id.iv_circle);
+
+
+        mTabLayout = rootView.findViewById(R.id.tabLayout);
+
+        mMsvHead = rootView.findViewById(R.id.msv_head);
+        mRvMessage = rootView.findViewById(R.id.rv_message);
     }
 }
