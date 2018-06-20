@@ -57,6 +57,7 @@ public class LottieFragment extends BaseFragment {
 
         list.add("AndroidWave.json");
         list.add("HamburgerArrow.json");
+        list.add("download_icon_success.json");
         list.add("lottiefiles.com - Camera.json");
         list.add("lottiefiles.com - Emoji Shock.json");
         list.add("lottiefiles.com - Emoji Tongue.json");

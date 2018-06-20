@@ -12,6 +12,14 @@
         </activity>
 
         <activity android:name=".demo_md.ToolBarActivity" />
+        <activity android:name=".demo_rxbinding.RxClicksActivity" />
+        <activity android:name=".demo_rxbinding.RxLongClicksActivity" />
+        <activity android:name=".demo_rxbinding.RxCheckedChangesActivity" />
+        <activity android:name=".demo_rxbinding.RxFormValidationActivity" />
+        <activity android:name=".demo_rxbinding.RxCountdownActivity" />
+        <activity android:name=".demo_rxbinding.RxSearchActivity" />
+        <activity android:name=".demo_rxbinding.RxDelayActivity" />
+        <activity android:name=".demo_rxbinding.RxPollActivity" />
     </application>
 
 </manifest>

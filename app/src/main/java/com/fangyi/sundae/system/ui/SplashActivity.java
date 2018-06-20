@@ -32,6 +32,13 @@ public class SplashActivity extends MyBaseActivity<SplashPresenter, SplashModel>
 
     @Override
     protected void init(Bundle savedInstanceState) {
+
+
+        if (!isTaskRoot()) {
+            finish();
+            return;
+        }
+
         initView();
 
 

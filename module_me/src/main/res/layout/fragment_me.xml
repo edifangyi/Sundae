@@ -63,14 +63,10 @@
 
                     </LinearLayout>
 
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/rv_message"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
-                <com.fangyi.module_me.widget.MultiShapeView
+                <com.fangyi.component_library.widget.MultiShapeView
                     android:id="@+id/msv_head"
                     android:layout_width="120dp"
                     android:layout_height="120dp"
@@ -102,16 +98,6 @@
             android:background="@color/gray"
             app:layout_scrollFlags="scroll|snap|enterAlways" />
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:background="@color/white"
-            app:tabMode="scrollable"
-            app:tabSelectedTextColor="@color/colorPrimary"
-            app:tabTextAppearance="@style/TabLayoutTextStyle"
-            app:tabTextColor="@color/gray" />
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
@@ -124,6 +110,10 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 

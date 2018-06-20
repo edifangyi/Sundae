@@ -1,4 +1,4 @@
-package com.fangyi.module_me.widget;
+package com.fangyi.component_library.widget;
 
 /**
  * ================================================
@@ -28,7 +28,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 
-import com.fangyi.module_me.R;
+import com.fangyi.component_library.R;
 
 
 /**

@@ -7,12 +7,19 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fangyi.component_library.base.BaseFragment;
 import com.fangyi.component_library.config.AppPahts;
+import com.fangyi.component_library.widget.MultiShapeView;
 import com.fangyi.module_me.R;
-import com.fangyi.module_me.widget.MultiShapeView;
+import com.fangyi.module_me.adapter.MeMessageAdapter;
+import com.fangyi.module_me.bean.MeMessageBean;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -27,9 +34,10 @@ import com.fangyi.module_me.widget.MultiShapeView;
 public class MeFragment extends BaseFragment {
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;
-    private TabLayout mTabLayout;
+
     private MultiShapeView mMsvHead;
     private RecyclerView mRvMessage;
+    private MeMessageAdapter mAdapter;
 
 
     @Override
@@ -51,8 +59,23 @@ public class MeFragment extends BaseFragment {
 
         mRvMessage.setNestedScrollingEnabled(true);
 
+        List<MeMessageBean> list = new ArrayList<>();
+        list.add(new MeMessageBean(0, R.drawable.ic_location, "现居 - 重庆"));
+        list.add(new MeMessageBean(1, R.drawable.ic_business, "Android开发工程师"));
+        list.add(new MeMessageBean(2, R.drawable.ic_github, "Github", "https://github.com/edifangyi"));
+        mAdapter = new MeMessageAdapter(list);
+        mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
 
-//        mRvMessage.setAdapter(mAdapter);
+                switch (list.get(position).getTitle()) {
+
+                }
+
+
+            }
+        });
+        mRvMessage.setAdapter(mAdapter);
 
     }
 
@@ -78,9 +101,6 @@ public class MeFragment extends BaseFragment {
     private void initView() {
         mAppBarLayout = rootView.findViewById(R.id.appBarLayout);
         mToolbar = rootView.findViewById(R.id.toolbar);
-
-
-        mTabLayout = rootView.findViewById(R.id.tabLayout);
 
         mMsvHead = rootView.findViewById(R.id.msv_head);
         mRvMessage = rootView.findViewById(R.id.rv_message);

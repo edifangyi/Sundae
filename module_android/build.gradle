@@ -4,6 +4,8 @@ if (IsBuildApp.toBoolean()) {
     apply plugin: 'com.android.library'
     apply plugin: 'com.jakewharton.butterknife'
 }
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -77,6 +79,9 @@ dependencies {
     api project(':component_library')
     annotationProcessor rootProject.ext.dependencies.arouterCompile
 
-    implementation 'com.jakewharton:butterknife:8.5.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
 }
