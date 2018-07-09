@@ -64,3 +64,15 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+app/libs/
+component_library/src/main/res/mipmap-anydpi-v26/
+component_library/src/main/res/mipmap-hdpi/
+component_library/src/main/res/mipmap-mdpi/
+component_library/src/main/res/mipmap-xxhdpi/
+component_library/src/main/res/mipmap-xxxhdpi/
+module_android/libs/
+module_android/src/main/java/com/fangyi/module_android/demo_glide/
+module_android/src/main/java/com/fangyi/module_android/demo_kotlin/
+module_me/libs/
+module_me/src/main/res/drawable-v24/
+module_vue/libs/
