@@ -11,7 +11,7 @@ import android.util.DisplayMetrics;
  * 作    者：FANGYI <87649669@qq.com>
  * 版    本：1.0.0
  * 日    期：2018/5/28
- * 说    明：
+ * 说    明：屏幕适配工具
  * ================================================
  */
 public class ScreenAdaptUtil {

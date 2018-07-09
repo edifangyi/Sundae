@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.fangyi.component_library.base.BaseFragment;
 import com.fangyi.component_library.base.BasePagerAdapter;
-import com.fangyi.component_library.config.AppPahts;
+import com.fangyi.component_library.config.SundaeAppRoutingPaths;
 import com.fangyi.module_android.ui.ButterKnifeFragment;
 import com.fangyi.module_android.ui.DataBindingFragment;
 import com.fangyi.module_android.ui.GlideFragment;
@@ -19,6 +19,7 @@ import com.fangyi.module_android.ui.KotlinFragment;
 import com.fangyi.module_android.ui.LottieFragment;
 import com.fangyi.module_android.ui.MaterialDesignFragment;
 import com.fangyi.module_android.ui.RxBindingFragment;
+import com.fangyi.module_android.ui.X5WebFragment;
 
 import java.util.ArrayList;
 
@@ -27,7 +28,7 @@ import java.util.ArrayList;
  * Create By admin On 2017/7/11
  * 功能：
  */
-@Route(path = AppPahts.ANDROID_PAHT)
+@Route(path = SundaeAppRoutingPaths.ANDROID_PAHT)
 public class AndroidFragment extends BaseFragment {
 
     private String mTitle;
@@ -59,6 +60,7 @@ public class AndroidFragment extends BaseFragment {
         titles.add("RxBinding");
         titles.add("DataBinding");
         titles.add("ButterKnife");
+        titles.add("X5WebView");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(LottieFragment.newInstance());
         fragments.add(GlideFragment.newInstance());
@@ -67,9 +69,10 @@ public class AndroidFragment extends BaseFragment {
         fragments.add(RxBindingFragment.newInstance());
         fragments.add(DataBindingFragment.newInstance());
         fragments.add(ButterKnifeFragment.newInstance());
-
+        fragments.add(X5WebFragment.newInstance());
         BasePagerAdapter adapter = new BasePagerAdapter(getChildFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
+        mViewPager.setOffscreenPageLimit(fragments.size());
         mTabLayout.setupWithViewPager(mViewPager, true);
 
 

@@ -3,7 +3,7 @@ package com.fangyi.module_vue.service;
 import android.content.Context;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.fangyi.component_library.config.AppPahts;
+import com.fangyi.component_library.config.SundaeAppRoutingPaths;
 import com.fangyi.component_library.mvp.IService;
 
 /**
@@ -14,7 +14,7 @@ import com.fangyi.component_library.mvp.IService;
  * 说    明：
  * ================================================
  */
-@Route(path = AppPahts.WX_LOGIN)
+@Route(path = SundaeAppRoutingPaths.WX_LOGIN)
 public class WxText implements IService {
     @Override
     public void init(Context context) {

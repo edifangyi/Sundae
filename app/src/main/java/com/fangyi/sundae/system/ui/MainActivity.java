@@ -8,9 +8,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 
 import com.alibaba.android.arouter.launcher.ARouter;
-import com.fangyi.component_library.app.MyBaseActivity;
+import com.fangyi.component_library.app.SundaeBaseActivity;
 import com.fangyi.component_library.base.BasePagerAdapter;
-import com.fangyi.component_library.config.AppPahts;
+import com.fangyi.component_library.config.SundaeAppRoutingPaths;
 import com.fangyi.component_library.widget.NoScrollViewPager;
 import com.fangyi.module_android.AndroidFragment;
 import com.fangyi.module_me.ui.MeFragment;
@@ -32,7 +32,7 @@ import me.majiajie.pagerbottomtabstrip.item.NormalItemView;
  * Create By admin On 2017/7/11
  * 功能：
  */
-public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> implements MainContract.View {
+public class MainActivity extends SundaeBaseActivity<MainPresenter, MainModel> implements MainContract.View {
 
 
     private NoScrollViewPager mViewPager;
@@ -61,10 +61,10 @@ public class MainActivity extends MyBaseActivity<MainPresenter, MainModel> imple
         titles.add("GitHub");
         titles.add("Me");
 
-        AndroidFragment androidFragment = (AndroidFragment) ARouter.getInstance().build(AppPahts.ANDROID_PAHT).withString("title", titles.get(0)).navigation();
-        VueFragment vueFragment = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
-        VueFragment a = (VueFragment) ARouter.getInstance().build(AppPahts.VUE_PAHT).withString("title", titles.get(2)).navigation();
-        MeFragment meFragment = (MeFragment) ARouter.getInstance().build(AppPahts.ME_PAHT).withString("title", titles.get(3)).navigation();
+        AndroidFragment androidFragment = (AndroidFragment) ARouter.getInstance().build(SundaeAppRoutingPaths.ANDROID_PAHT).withString("title", titles.get(0)).navigation();
+        VueFragment vueFragment = (VueFragment) ARouter.getInstance().build(SundaeAppRoutingPaths.VUE_PAHT).withString("title", titles.get(2)).navigation();
+        VueFragment a = (VueFragment) ARouter.getInstance().build(SundaeAppRoutingPaths.VUE_PAHT).withString("title", titles.get(2)).navigation();
+        MeFragment meFragment = (MeFragment) ARouter.getInstance().build(SundaeAppRoutingPaths.ME_PAHT).withString("title", titles.get(3)).navigation();
 
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(androidFragment);

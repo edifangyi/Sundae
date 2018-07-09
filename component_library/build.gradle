@@ -44,42 +44,31 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    api rootProject.ext.dependencies.appcompatV7
-    api rootProject.ext.dependencies.v4
-
-    api rootProject.ext.dependencies.design
-    api rootProject.ext.dependencies.cardView
-
-    api rootProject.ext.dependencies.annotation
-    api rootProject.ext.dependencies.constrant
-
-    api rootProject.ext.dependencies.multidex
-
-    api rootProject.ext.dependencies.arouter
-    annotationProcessor rootProject.ext.dependencies.arouterCompile
-
-    api rootProject.ext.dependencies.klog
-    api rootProject.ext.dependencies.utilcode
-
-    api rootProject.ext.dependencies.kalle
-    api rootProject.ext.dependencies.gson
-    api rootProject.ext.dependencies.fastjson
-
-    api rootProject.ext.dependencies.baseAdapter
-    api rootProject.ext.dependencies.materialDialogs
-
-    api rootProject.ext.dependencies.navigationView
-
-    api rootProject.ext.dependencies.glide
-    annotationProcessor rootProject.ext.dependencies.glideCompile
-
-    api rootProject.ext.dependencies.lottie
-
-    api rootProject.ext.dependencies.rxbinding
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    api rootProject.ext.dependencies.appcompatV7
+    api rootProject.ext.dependencies.v4
+    api rootProject.ext.dependencies.design
+    api rootProject.ext.dependencies.cardView
+    api rootProject.ext.dependencies.annotation
+    api rootProject.ext.dependencies.constrant
+    api rootProject.ext.dependencies.multidex
+    api rootProject.ext.dependencies.arouter
+    annotationProcessor rootProject.ext.dependencies.arouterCompile
+    api rootProject.ext.dependencies.klog
+    api rootProject.ext.dependencies.utilcode
+    api rootProject.ext.dependencies.permission
+    api rootProject.ext.dependencies.kalle
+    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies.fastjson
+    api rootProject.ext.dependencies.baseAdapter
+    api rootProject.ext.dependencies.materialDialogs
+    api rootProject.ext.dependencies.navigationView
+    api rootProject.ext.dependencies.glide
+    annotationProcessor rootProject.ext.dependencies.glideCompile
+    api rootProject.ext.dependencies.lottie
+    api rootProject.ext.dependencies.rxbinding
+    api files('libs/tbs_sdk_thirdapp_v3.6.0.1249_43610.jar')
 }

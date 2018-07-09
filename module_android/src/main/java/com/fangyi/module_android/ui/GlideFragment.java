@@ -29,6 +29,10 @@ public class GlideFragment extends BaseFragment {
     @Override
     protected void init(Bundle savedInstanceState) {
 
+
+
+
+
     }
 
 

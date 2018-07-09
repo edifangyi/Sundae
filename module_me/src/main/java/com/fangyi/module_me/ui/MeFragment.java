@@ -2,8 +2,6 @@ package com.fangyi.module_me.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -12,7 +10,7 @@ import android.view.View;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.fangyi.component_library.base.BaseFragment;
-import com.fangyi.component_library.config.AppPahts;
+import com.fangyi.component_library.config.SundaeAppRoutingPaths;
 import com.fangyi.component_library.widget.MultiShapeView;
 import com.fangyi.module_me.R;
 import com.fangyi.module_me.adapter.MeMessageAdapter;
@@ -30,7 +28,7 @@ import java.util.List;
  * 说    明：
  * ================================================
  */
-@Route(path = AppPahts.ME_PAHT)
+@Route(path = SundaeAppRoutingPaths.ME_PAHT)
 public class MeFragment extends BaseFragment {
     private AppBarLayout mAppBarLayout;
     private Toolbar mToolbar;

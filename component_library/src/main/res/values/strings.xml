@@ -14,4 +14,14 @@
     <string name="http_server_data_format_error">服务器数据格式错误</string>
     <string name="http_server_error">服务器开小差啦</string>
     <string name="http_unknow_error">发生未知异常</string>
+
+
+    <string name="setting">"设置"</string>
+    <string name="title_dialog">"权限"</string>
+    <string name="resume">"恢复"</string>
+    <string name="cancel">"取消"</string>
+
+    <string name="message_permission_rationale">允许以下权限以便程序继续执行：\n\n%1$s</string>
+    <string name="message_permission_always_failed">我们需要以下权限，请在设置中为我们开启：\n\n%1$s</string>
+
 </resources>

@@ -13,6 +13,7 @@
         <activity android:name=".demo_rxbinding.RxSearchActivity" />
         <activity android:name=".demo_rxbinding.RxDelayActivity" />
         <activity android:name=".demo_rxbinding.RxPollActivity" />
+        <activity android:name=".demo_x5.X5TBSActivity" />
     </application>
 
 </manifest>

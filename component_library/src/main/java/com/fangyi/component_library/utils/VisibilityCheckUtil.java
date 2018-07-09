@@ -8,7 +8,7 @@ import android.view.View;
  * 作    者：FANGYI <87649669@qq.com>
  * 版    本：1.0.0
  * 日    期：2018/5/24
- * 说    明：
+ * 说    明：View可见性检查
  * ================================================
  */
 public class VisibilityCheckUtil {

@@ -29,6 +29,8 @@ android {
                 arguments = [moduleName: project.getName()]
             }
         }
+
+
     }
 
     dataBinding {
@@ -75,13 +77,10 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     api project(':component_library')
     annotationProcessor rootProject.ext.dependencies.arouterCompile
-
     implementation "com.jakewharton:butterknife:$butterknife_version"
     annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
-
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
 }

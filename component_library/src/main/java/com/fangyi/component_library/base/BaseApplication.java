@@ -3,13 +3,14 @@ package com.fangyi.component_library.base;
 import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
+import android.util.Log;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.blankj.utilcode.util.Utils;
 import com.fangyi.component_library.BuildConfig;
-import com.fangyi.component_library.config.AppConfig;
-import com.fangyi.component_library.http.JsonConverter;
-import com.fangyi.component_library.utils.ScreenAdaptUtil;
+import com.fangyi.component_library.config.SundaeKalleConfig;
+import com.fangyi.component_library.utils.kalle.JsonConverter;
+import com.tencent.smtt.sdk.QbSdk;
 import com.yanzhenjie.kalle.Kalle;
 import com.yanzhenjie.kalle.KalleConfig;
 import com.yanzhenjie.kalle.connect.BroadcastNetwork;
@@ -53,11 +54,13 @@ public abstract class BaseApplication extends Application {
         Kalle.setConfig(KalleConfig.newBuilder()
                 .connectFactory(URLConnectionFactory.newBuilder().build())
                 .cookieStore(DBCookieStore.newBuilder(this).build())
-                .cacheStore(DiskCacheStore.newBuilder(AppConfig.get().PATH_APP_CACHE).build())
+                .cacheStore(DiskCacheStore.newBuilder(SundaeKalleConfig.get().PATH_APP_CACHE).build())
                 .network(new BroadcastNetwork(this))
                 .addInterceptor(new LoggerInterceptor("KalleSample", BuildConfig.DEBUG))
                 .converter(new JsonConverter(this))
                 .build());
+
+
 
 
 
