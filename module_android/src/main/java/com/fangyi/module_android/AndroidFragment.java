@@ -18,6 +18,7 @@ import com.fangyi.module_android.ui.GlideFragment;
 import com.fangyi.module_android.ui.KotlinFragment;
 import com.fangyi.module_android.ui.LottieFragment;
 import com.fangyi.module_android.ui.MaterialDesignFragment;
+import com.fangyi.module_android.ui.PopupFragment;
 import com.fangyi.module_android.ui.RxBindingFragment;
 import com.fangyi.module_android.ui.X5WebFragment;
 
@@ -61,6 +62,7 @@ public class AndroidFragment extends BaseFragment {
         titles.add("DataBinding");
         titles.add("ButterKnife");
         titles.add("X5WebView");
+        titles.add("Popup");
         ArrayList<Fragment> fragments = new ArrayList<>();
         fragments.add(LottieFragment.newInstance());
         fragments.add(GlideFragment.newInstance());
@@ -70,6 +72,7 @@ public class AndroidFragment extends BaseFragment {
         fragments.add(DataBindingFragment.newInstance());
         fragments.add(ButterKnifeFragment.newInstance());
         fragments.add(X5WebFragment.newInstance());
+        fragments.add(PopupFragment.newInstance());
         BasePagerAdapter adapter = new BasePagerAdapter(getChildFragmentManager(), fragments, titles);
         mViewPager.setAdapter(adapter);
         mViewPager.setOffscreenPageLimit(fragments.size());

@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:label">
 
-        <activity android:name=".system.ui.SplashActivity">
+        <activity
+            android:name=".system.ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

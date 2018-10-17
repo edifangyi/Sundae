@@ -19,7 +19,7 @@ ext {
             arouterCompile : 'com.alibaba:arouter-compiler:1.1.4',
             arouter        : 'com.alibaba:arouter-api:1.3.1',
 
-            permission        : 'com.yanzhenjie:permission:2.0.0-rc11',
+            permission     : 'com.yanzhenjie:permission:2.0.0-rc11',
 
             utilcode       : 'com.blankj:utilcode:1.16.0',
 

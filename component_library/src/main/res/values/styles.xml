@@ -12,6 +12,8 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:configChanges">orientation|screenSize|keyboardHidden</item>
+        <item name="android:screenOrientation">portrait</item>
         <!--<item name="android:windowFullscreen">?android:windowNoTitle</item>-->
     </style>
 
